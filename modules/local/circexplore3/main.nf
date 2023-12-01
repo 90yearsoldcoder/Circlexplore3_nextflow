@@ -7,7 +7,7 @@ params.fasta   = params.genome  ? params.genomes[ params.genome ].fasta ?: false
 params.gtf     = params.genome  ? params.genomes[ params.genome ].gtf ?: false : false
 params.bowtie = params.genome  ? params.genomes[ params.genome ].bowtie ?: false : false
 
-process circ3_test{
+process circ3{
     label 'process_high'
     
     input:
