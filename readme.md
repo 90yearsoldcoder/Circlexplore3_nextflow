@@ -59,10 +59,11 @@ genomes {
 ### You can find those infomation on [igenomes](https://github.com/ewels/AWS-iGenomes)
 
 # About docker container
-* ### You do not have to generate a container by yourself, it is already push to ```dockerhub```
+* ### You do not have to generate a container by yourself, it is already pushed to ```dockerhub```
 * ### If you want to regenerate/redesign the container, you can find my define files at ```dockerfile```
 
 # Todo
 - [x] Single sample test
 - [ ] Multiple samples test - on going
 - [ ] make hiSat2 index online/ or generate without any user-end operation
+- [ ] Delete fastq file after analysis
