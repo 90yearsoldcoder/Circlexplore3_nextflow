@@ -1,0 +1,6 @@
+val meta: meta information
+path reads: reads files in fastq format. reads[0]=pair1, reads[1] = pair2
+path fasta: reference fasta file
+path hisat_index: 
+path botie_index:
+path gtf:
