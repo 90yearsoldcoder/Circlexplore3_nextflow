@@ -1,0 +1,8 @@
+work/
+result/
+*.test.nf
+*.test.qsub
+log.e
+log.o
+*log*
+.nextflow/
