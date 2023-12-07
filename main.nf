@@ -1,11 +1,21 @@
-include { circ3 } from './modules/circexplore3/main'
+nextflow.enable.dsl=2
+
+include { circ3 } from './modules/local/circexplore3/main'
 include { INPUT_CHECK       } from './subworkflows/local/input_check.nf'
+include { generateHisat2Index } from './modules/local/hisat2Index/main'
 
 
-params.genome = ''
 params.fasta   = params.genome  ? params.genomes[ params.genome ].fasta ?: false : false
 params.gtf     = params.genome  ? params.genomes[ params.genome ].gtf ?: false : false
 params.bowtie = params.genome  ? params.genomes[ params.genome ].bowtie ?: false : false
+
+ch_fasta       = 'null'
+ch_gtf         = 'null'
+
+// Check mandatory parameters
+if (params.input) { ch_input = file(params.input) } else { exit 1, 'Input samplesheet not specified!' }
+ch_phenotype   = Channel.empty()
+
 '''
 //This is a residual part of test block
 workflow {
@@ -71,9 +81,9 @@ workflow{
     fasta = file(params.fasta)
     gtf = file(params.gtf)
     //Todo: find a stable way to generate hisat index
-    hisat_index = file('/restricted/projectnb/casa/mtLin/reference/hisat_index')
+    hisat_index = generateHisat2Index(params.fasta)
 
-    circ3_test(ch_fastq.single, 
+    circ3(ch_fastq.single, 
                 fasta, 
                 hisat_index, 
                 botie_index, 

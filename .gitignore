@@ -1,5 +1,5 @@
 work/
-result/
+results/
 *.test.nf
 *.test.qsub
 log.e
