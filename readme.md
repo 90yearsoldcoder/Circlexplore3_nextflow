@@ -17,7 +17,7 @@
 
 ## 2. run command
 ```
-nextflow run main.nf -dump-channels -profile singularity --genome GRCh38
+nextflow run main.nf -dump-channels -profile singularity --input path/to/samplelist.csv --genome GRCh38
 ```
 
 # About maintenance
