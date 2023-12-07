@@ -64,9 +64,9 @@ genomes {
 
 # Todo
 - [x] Single sample test
-- [ ] Multiple samples test - on going
+- [x] Multiple samples test - on going
     ```
     nextflow run testing_DCC.nf -dump-channels -profile singularity --input /restricted/projectnb/casa/mtLin/sambabi/mice_circRNA/raw_data/sample_list.csv --genome GRCm38
     ```
-- [ ] make hiSat2 index online/ or generate without any user-end operation
+- [x] make hiSat2 index online/ or generate without any user-end operation
 - [ ] Delete fastq file after analysis
