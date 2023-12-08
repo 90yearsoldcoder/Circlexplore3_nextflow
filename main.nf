@@ -73,7 +73,7 @@ workflow{
     
     /**/
     //debug/verbose
-    //ch_fastq.multiple.view{"$it is multiple"}
+    ch_fastq.multiple.view{"$it is multiple"}
     ch_fastq.single.view{"$it"}
 
     //prepare reference. change them into channel

@@ -10,10 +10,12 @@ process generateHisat2Index {
     path ref_genome
 
     output:
-    path "${ref_genome.baseName}.hisat2.idx"
+    path "${ref_genome.baseName}_index_dir"
 
     script:
     """
-    hisat2-build -p 8 $ref_genome ${ref_genome.baseName}.hisat2.idx
+    mkdir -p ${ref_genome.baseName}_index_dir
+    hisat2-build -p 8 $ref_genome ${ref_genome.baseName}_index_dir/hisat_index
     """
+
 }
